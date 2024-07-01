@@ -1,0 +1,71 @@
+name: Compile and Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  compile-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v2
+      - name: Build Curriculum [eng]
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: doc
+          root_file: curriculum-vitae-eng.tex
+          compiler: pdflatex
+      - name: Build Letter [eng]
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: doc
+          root_file: cover-letter-eng.tex
+          compiler: pdflatex
+      - name: Build Curriculum [ita]
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: doc
+          root_file: curriculum-vitae-ita.tex
+          compiler: pdflatex
+      - name: Build Letter [ita]
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: doc
+          root_file: cover-letter-ita.tex
+          compiler: pdflatex
+      - name: Prepare assets
+        run: |
+          mkdir assets
+          mv doc/curriculum-vitae-eng.pdf assets/
+          mv doc/curriculum-vitae-ita.pdf assets/
+          mv doc/cover-letter-eng.pdf assets/
+          mv doc/cover-letter-ita.pdf assets/
+      - name: Push Local Changes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with:
+          file_pattern: assets/*
+          commit_message: "cd(assets): generate assets"
+          branch: ${{ github.head_ref }}
+      - name: Apply Semantic Versioning
+        uses: anitvam/conventionalcommit-semantic-releasing@main
+        with:
+          token: ${{ secrets.SR_API_TOKEN_GITHUB }}
+
+  delete-assets:
+    needs: compile-and-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v2
+      - name: Delete Assets
+        run: |
+          git pull
+          rm -rf assets
+      - name: Push Local Changes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with:
+          commit_message: "cd(assets): remove assets"
+          branch: ${{ github.head_ref }}

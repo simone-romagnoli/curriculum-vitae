@@ -1,0 +1,10 @@
+# IDE
+.idea
+
+# Output files
+out
+
+# Token
+.token
+
+.DS_Store
