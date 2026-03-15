@@ -39,7 +39,7 @@ jobs:
           compiler: pdflatex
       - name: Prepare assets
         run: |
-          mkdir assets
+          mkdir -p assets
           mv doc/curriculum-vitae-eng.pdf assets/
           mv doc/curriculum-vitae-ita.pdf assets/
           mv doc/cover-letter-eng.pdf assets/
