@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   compile-and-release:
@@ -48,27 +49,4 @@ jobs:
         with:
           file_pattern: assets/*
           commit_message: "cd(assets): generate assets"
-          branch: ${{ github.head_ref }}
-      - name: Apply Semantic Versioning
-        uses: anitvam/conventionalcommit-semantic-releasing@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.SR_API_TOKEN_GITHUB }}
-        with:
-          token: ${{ secrets.SR_API_TOKEN_GITHUB }}
-
-
-  delete-assets:
-    needs: compile-and-release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the Repository
-        uses: actions/checkout@v2
-      - name: Delete Assets
-        run: |
-          git pull
-          rm -rf assets
-      - name: Push Local Changes
-        uses: stefanzweifel/git-auto-commit-action@v4.1.2
-        with:
-          commit_message: "cd(assets): remove assets"
           branch: ${{ github.head_ref }}
