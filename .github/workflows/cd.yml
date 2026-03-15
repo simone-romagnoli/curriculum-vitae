@@ -51,8 +51,11 @@ jobs:
           branch: ${{ github.head_ref }}
       - name: Apply Semantic Versioning
         uses: anitvam/conventionalcommit-semantic-releasing@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.SR_API_TOKEN_GITHUB }}
         with:
           token: ${{ secrets.SR_API_TOKEN_GITHUB }}
+
 
   delete-assets:
     needs: compile-and-release
