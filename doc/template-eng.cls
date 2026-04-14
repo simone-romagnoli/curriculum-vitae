@@ -161,6 +161,7 @@
         \profilesection{Certifications}
         \begin{flushleft}
             \certs
+            \vspace{20pt}
         \end{flushleft}
 
         %------------------------------------------------
@@ -169,6 +170,7 @@
 			\profilesection{About Me}
 			\begin{flushleft}
 				\profile
+				\vspace{20pt}
 			\end{flushleft}
 		}
 
@@ -185,12 +187,14 @@
 
 		\profilesection{Foreign Languages}
 		\languages
+		\vspace{20pt}
 			
 		%------------------------------------------------
 		
 		\profilesection{Hobbies}
 		\begin{flushleft}
 			\hobby
+			\vspace{20pt}
 		\end{flushleft}
 			
 		%------------------------------------------------
