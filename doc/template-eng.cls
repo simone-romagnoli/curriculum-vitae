@@ -187,6 +187,7 @@
 		%------------------------------------------------
 
 		\profilesection{Foreign Languages}
+		\vspace{3pt}
 		\languages
 		\vspace{10pt}
 			
