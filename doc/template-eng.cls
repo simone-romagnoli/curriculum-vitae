@@ -78,6 +78,7 @@
 \newcommand{\cvsite}[1]{\renewcommand{\cvsite}{#1}}
 \newcommand{\profile}[1]{\renewcommand{\profile}{#1}}
 \newcommand{\hobby}[1]{\renewcommand{\hobby}{#1}}
+\newcommand{\certs}[1]{\renewcommand{\certs}{#1}}
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
 \newcommand{\cvjobtitle}[1]{\renewcommand{\cvjobtitle}{#1}}
@@ -155,7 +156,14 @@
 
 		{\Large\color{black!80}\cvjobtitle}
 
-		%------------------------------------------------
+        %------------------------------------------------
+
+        \profilesection{Certifications}
+        \begin{flushleft}
+            \certs
+        \end{flushleft}
+
+        %------------------------------------------------
 		
 		\ifthenelse{\equal{\profile}{}}{}{
 			\profilesection{About Me}
