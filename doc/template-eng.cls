@@ -158,10 +158,10 @@
 
         %------------------------------------------------
 
-        % \profilesection{Certifications}
-        % \begin{flushleft}
-        %     \certs
-        % \end{flushleft}
+        \profilesection{Certifications}
+        \begin{flushleft}
+            \certs
+        \end{flushleft}
 
         %------------------------------------------------
 		
