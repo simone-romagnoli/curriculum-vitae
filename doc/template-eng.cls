@@ -155,14 +155,12 @@
 		%------------------------------------------------
 
 		{\Large\color{black!80}\cvjobtitle}
-		\vspace{10pt}
 
         %------------------------------------------------
 
         \profilesection{Certifications}
         \begin{flushleft}
             \certs
-            \vspace{10pt}
         \end{flushleft}
 
         %------------------------------------------------
@@ -171,7 +169,6 @@
 			\profilesection{About Me}
 			\begin{flushleft}
 				\profile
-				\vspace{20pt}
 			\end{flushleft}
 		}
 
@@ -189,14 +186,12 @@
 		\profilesection{Foreign Languages}
 		\vspace{3pt}
 		\languages
-		\vspace{10pt}
 			
 		%------------------------------------------------
 		
 		\profilesection{Hobbies}
 		\begin{flushleft}
 			\hobby
-			\vspace{10pt}
 		\end{flushleft}
 			
 		%------------------------------------------------
