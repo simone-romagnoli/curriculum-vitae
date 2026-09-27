@@ -198,7 +198,7 @@
 
 		\profilesection{Contacts}
 		\begin{flushleft}
-			\vspace{-3mm}
+			\vspace{-15pt}
 			\renewcommand{\arraystretch}{1.6}
 			\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
 			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Info}} & \cvdate\\}
@@ -213,7 +213,7 @@
 		%------------------------------------------------
 
 		\begin{flushleft}
-			\vspace{-3mm}
+			\vspace{-25pt}
 			\scriptsize{I authorize to the treatment of personal data according to the administrative order of June 30, 2003, n. 196.}
 		\end{flushleft}
 	\end{textblock}
